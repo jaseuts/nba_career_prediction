@@ -51,7 +51,12 @@ Project Organization
     │
     └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 
-
+## Instructions
+CLI:  
+	1. `cd \path\to\the\project_folder`: changes the current working directory to the project folder (we named our project folder as `nba_career_prediction`)  
+	2. `docker build -t nba-pred-notebook:python-3.8.8 .`: builds a docker image called *nba-pred-notebook* with the tag *python-3.8.8*  
+	3. `docker run -dit --rm --name nba_career_prediction -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v "${PWD}":/home/jovyan/work nba-pred-notebook:python-3.8.8`: creates a container called *nba_career_prediction* from the image built in step 2
+	
 --------
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
