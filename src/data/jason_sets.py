@@ -1,8 +1,15 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 def save_sets(X_train=None, y_train=None, X_val=None, y_val=None, X_test=None, y_test=None, path='../data/processed/'):
 =======
 def save_sets(X_train=None, y_train=None, X_val=None, y_val=None, X_test=None, y_test=None, test_id=None, path='../data/processed/'):
 >>>>>>> c97e6a1 (jason resolved problem of pull request and reinstated stashed works)
+=======
+def save_sets(X_train=None, y_train=None, X_val=None, y_val=None, X_test=None, y_test=None, test_id=None, path='../data/processed/'):
+=======
+def save_sets(X_train=None, y_train=None, X_val=None, y_val=None, X_test=None, y_test=None, path='../data/processed/'):
+>>>>>>> 05a0cfad27e9f7a5e3860a6eb31fb96e94217304
+>>>>>>> master
     """Save the different sets locally
 
     Parameters
@@ -20,10 +27,17 @@ def save_sets(X_train=None, y_train=None, X_val=None, y_val=None, X_test=None, y
     y_test: Numpy Array
         Target for the testing set
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     test_id: Numpy Array
         The ID of instances in the testing set
 >>>>>>> c97e6a1 (jason resolved problem of pull request and reinstated stashed works)
+=======
+    test_id: Numpy Array
+        The ID of instances in the testing set
+=======
+>>>>>>> 05a0cfad27e9f7a5e3860a6eb31fb96e94217304
+>>>>>>> master
     path : str
         Path to the folder where the sets will be saved (default: '../data/processed/')
 
@@ -45,11 +59,22 @@ def save_sets(X_train=None, y_train=None, X_val=None, y_val=None, X_test=None, y
     if y_test is not None:
       np.save(f'{path}y_test',  y_test)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    if test_id is not None:
+      np.save(f'{path}test_id',  test_id)
+      
+      
+def load_sets(path='../data/processed/', val=False):
+    """Load various locally saved sets
+=======
+>>>>>>> master
     
     
 
 def load_sets(path='../data/processed/', val=False):
     """Load the different locally save sets
+<<<<<<< HEAD
 =======
     if test_id is not None:
       np.save(f'{path}test_id',  test_id)
@@ -58,6 +83,9 @@ def load_sets(path='../data/processed/', val=False):
 def load_sets(path='../data/processed/', val=False):
     """Load various locally saved sets
 >>>>>>> c97e6a1 (jason resolved problem of pull request and reinstated stashed works)
+=======
+>>>>>>> 05a0cfad27e9f7a5e3860a6eb31fb96e94217304
+>>>>>>> master
 
     Parameters
     ----------
@@ -79,10 +107,17 @@ def load_sets(path='../data/processed/', val=False):
     Numpy Array
         Target for the testing set
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     Numpy Array
         Row Id for the testing set      
 >>>>>>> c97e6a1 (jason resolved problem of pull request and reinstated stashed works)
+=======
+    Numpy Array
+        Row Id for the testing set      
+=======
+>>>>>>> 05a0cfad27e9f7a5e3860a6eb31fb96e94217304
+>>>>>>> master
     """
     import numpy as np
     import os.path
@@ -94,6 +129,7 @@ def load_sets(path='../data/processed/', val=False):
     y_val   = np.load(f'{path}y_val.npy'  ) if os.path.isfile(f'{path}y_val.npy')   else None
     y_test  = np.load(f'{path}y_test.npy' ) if os.path.isfile(f'{path}y_test.npy')  else None
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     return X_train, y_train, X_val, y_val, X_test, y_test
 =======
@@ -102,3 +138,13 @@ def load_sets(path='../data/processed/', val=False):
     return X_train, y_train, X_val, y_val, X_test, y_test, test_id
 
 >>>>>>> c97e6a1 (jason resolved problem of pull request and reinstated stashed works)
+=======
+    test_id = np.load(f'{path}test_id.npy') if os.path.isfile(f'{path}test_id.npy') else None
+    
+    return X_train, y_train, X_val, y_val, X_test, y_test, test_id
+
+=======
+    
+    return X_train, y_train, X_val, y_val, X_test, y_test
+>>>>>>> 05a0cfad27e9f7a5e3860a6eb31fb96e94217304
+>>>>>>> master
