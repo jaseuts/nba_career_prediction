@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nguyen_Thang-01066846-week2_xgb_&_tune</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Nguyen_Thang-01066846-week2_tuned_models</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14585,7 +14585,7 @@ Then make prediction and save the tuned model and its prediciton result to drive
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">rf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">min_weight_fraction_leaf</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">min_samples_split</span><span class="o">=</span><span class="mf">0.08</span><span class="p">,</span> 
@@ -14809,7 +14809,7 @@ Training AUC score: 0.664
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">xgb_tuned</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span>
@@ -14829,7 +14829,7 @@ Training AUC score: 0.664
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Training accuracy score: </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">acc_scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Training AUC score: </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">auc_scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
 
-<span class="n">save_prediction</span><span class="p">(</span><span class="n">xgb_tuned</span><span class="p">,</span> <span class="n">test_scaled</span><span class="p">,</span> <span class="n">test_id</span><span class="p">,</span> <span class="s1">&#39;rf_tuned_smote_pred&#39;</span><span class="p">)</span>
+<span class="n">save_prediction</span><span class="p">(</span><span class="n">xgb_tuned</span><span class="p">,</span> <span class="n">test_scaled</span><span class="p">,</span> <span class="n">test_id</span><span class="p">,</span> <span class="s1">&#39;xgb_tuned_smote_pred&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
